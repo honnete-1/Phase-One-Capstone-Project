@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- I configured Tailwind CSS's theme so that
+    the color palette is consist everywhere -->
+    <script>
+        tailwind.config ={
+            theme: {
+                extend: {
+                    colors: {
+                        snow: '#F0F5F9', // Used for the backgound
+                        mist:     '#C9D6DF', // Used for borders and accents
+                        slate:    '#52616B', // Used for the seconadry text
+                        charcoal: '#1E2022', // Used for the headings and dark UI
+                    },
+                    fontFamily: {
+                        // I picked 2 font types, one for the heading and one for the body
+                        display: ['"Playfair Display"', 'serif'],
+                        body:    ['"DM Sans"', 'sans-serif'],
+                    },
+                },
+            },
+        }
+    </script>
+
+    <!-- Importing the two Google fonts I declared above -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-snow font-body text-charcoal min-h-screen flex flex-col">
+    <!-- I added navigation links at the top of the page, and I used Tailwind's utility classes to style them. 
+    I also added a hover effect to make them more interactive.
+     -->
+    <nav class="sticky top-0 z-50 bg-charcoal shadow-lg">
+        <div class="max-w-6xl mx-auto px-4 py-4 items-center justify-between">
+            <!-- Brand/Logo -->
+            <a href="index.html" class="font-display text-2xl text-snow tracking-wide hover:text-mist transition-colors">
+                📖 Book Explorer
+            </a>
+
+            <!-- I added hamburger icon that is hidden on the desktop and shown on mobile
+            and I used aria-label that makes it accessible to screenreaders which will say "open menu" -->
+            <button id="menu-btn" class="md:hodden text-snow text-2xl focus:outline-none" aria-label="Open menu">☰</button>
+        </div>
+        <!-- the mobile dropdown menu will be hidden by default then JS will toggle its visibility when the hamburger icon is clicked -->
+        <div id="mobile-menu" class="hidden md:hidden bg-charcoal border-t border-slate px-4 pb-4">
+            <ul class="flex flex-col gap-3 pt-3 text-mist font-medium text-sm uppercase tracking-widest">
+                <li><a href="index.html" class="nav-link block py-1">Home</a></li>
+                <li><a href="favorites.html" class="nav-link block py-1">Favorites</a></li>
+                <li><a href="about.html" class="nav-link block py-1">About</a></li>
+            </ul>
+        </div> 
+    </nav>
+</body>
+</html>
