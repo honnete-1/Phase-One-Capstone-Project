@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About · Book Explorer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            snow:     '#F0F5F9',
+            mist:     '#C9D6DF',
+            slate:    '#52616B',
+            charcoal: '#1E2022',
+          },
+          fontFamily: {
+            display: ['"Playfair Display"', 'serif'],
+            body:    ['"DM Sans"', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<nav class="sticky top-0 z-50 bg-charcoal shadow-lg">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+      <a href="index.html" class="font-display text-2xl text-snow tracking-wide hover:text-mist transition-colors">
+        📖 Book Explorer
+      </a>
+      <button id="menu-btn" class="md:hidden text-snow text-2xl focus:outline-none" aria-label="Open menu">☰</button>
+      <ul class="hidden md:flex gap-8 text-mist font-body font-medium text-sm tracking-widest uppercase">
+        <li><a href="index.html"     class="nav-link">Home</a></li>
+        <li><a href="favorites.html" class="nav-link">Favourites</a></li>
+        <li><a href="about.html"     class="nav-link active-link">About</a></li>
+      </ul>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-charcoal border-t border-slate px-4 pb-4">
+      <ul class="flex flex-col gap-3 pt-3 text-mist font-medium text-sm uppercase tracking-widest">
+        <li><a href="index.html"     class="nav-link block py-1">Home</a></li>
+        <li><a href="favorites.html" class="nav-link block py-1">Favourites</a></li>
+        <li><a href="about.html"     class="nav-link block py-1">About</a></li>
+      </ul>
+    </div>
+  </nav>
