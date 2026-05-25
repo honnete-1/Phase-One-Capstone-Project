@@ -1,0 +1,106 @@
+/* /* I created styles.css to complimnet Tailwind. This separate CSS file  */
+/* will handle things that Tailwind can't express cleanly like CSS animations, custom fonts, 
+and any specific styles that are unique to the project. */
+
+/* Nav link hover effect */
+
+.nav-link{
+    position: relative;
+    padding-bottom: 2px;
+    transition: color 0.2s;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;               /* starts at 0 width — invisible */
+  height: 2px;
+  background-color: #C9D6DF; /* mist color */
+  transition: width 0.25s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active-link::after {
+  width: 100%;            /* slides to full width on hover / active */
+}
+.nav-link.active-link {
+  color: #F0F5F9; /* snow — brighter on active page */
+}
+
+/* Hero section */
+
+.hero-section {
+  background: linear-gradient(160deg, #ffffff 0%, #F0F5F9 60%, #C9D6DF22 100%);
+  border-bottom: 1px solid #C9D6DF;
+}
+
+/* Book card */
+
+.book-card {
+  background: white;
+  border-radius: 1rem;
+  border: 1px solid #C9D6DF;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+
+/* I added a hover that gives the card a tactile interactive feel signaling
+to the user that they can interact with it */
+
+.book-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(30, 32, 34, 0.12);
+}
+
+/* I added a book cover image container with fixed height so that cards align */
+
+.book-cover img {
+    width:100%;
+    height:200px;
+    object-fit:cover;
+}
+
+/* I also added cover placeholder for books with no image
+So that they won't be blank */
+
+.book-cover-placeholder {
+    width:100%;
+    height:200px;
+    background: linear-gradient(135deg, #C9D6DF, #52616B);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size: 3rem;
+}
+
+/* Added the Card body text area */
+
+.book-info {
+  padding: 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.book-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1E2022;
+  margin-bottom: 0.25rem;
+  /* I added a line-clamp limits to 2 lines so cards stay same height */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.book-author {
+  font-size: 0.8rem;
+  color: #52616B;
+  margin-bottom: 0.75rem;
+  flex: 1;
+}
