@@ -72,7 +72,7 @@
             Discover Your <br/>
             <span class="text-slate italic" > Next Reading Adventure</span>
         </h1>
-        <p class="text-slate text-lg max-w-xl mb-10 leading-relaxed">
+        <p class="text-slate text-lg max-w-xl mx-auto mb-10 leading-relaxed">
             Search millions of books, save your favourites, and never lose track of what to read next.
         </p>
 
@@ -83,9 +83,38 @@
                 Search
             </button>
          </div>
-
-
         </header>
+
+
+        <!-- Main Content Area -->
+        <main class="flex-1 max-w-6xl mx-auto w-full px-4 py-12">
+        <!-- section heading -->
+
+            <div class="flex items-center justify-between mb-8">
+                <h2  id=" section-title" class="font-display text-3xl text-charcoal"></h2>
+                <p id="result-count" class="text-slate text-sm"></p>
+            </div>
+            <!-- I added spinner to show the user the background task is running 
+            as I load data that API is fetching the data and it will be hidden when the data is loaded and displayed to the user -->
+
+            <div id="loading" class="hidden flex flex-col items-center py-20 text-slate">
+                <div class="spinner mb-4"></div>
+                <p class="font-body">Finding books…</p>
+            </div>
+
+            <!-- Adding part of no result in case API fails to load the data -->
+              <div id="no-results" class="hidden text-center py-20 text-slate font-body">
+                <p class="text-5xl mb-4">📭</p>
+                <p class="text-xl font-medium">No books found</p>
+                <p class="text-sm mt-2">Try a different search term</p>
+            </div>
+
+            <div id="books-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+    ><!-- Book cards are injected here by main.js -->
+    </div>
+
+  
+</main>
 
 </body>
 </html>
