@@ -36,6 +36,9 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body class="bg-snow font-body text-charcoal min-h-screen flex flex-col">
+    
+    
+    <!-- NAVBAR -->
     <!-- I added navigation links at the top of the page, and I used Tailwind's utility classes to style them. 
     I also added a hover effect to make them more interactive.
      -->
@@ -59,5 +62,30 @@
             </ul>
         </div> 
     </nav>
+
+
+    <!-- HERO SECTION -->
+     <!-- I added hero section to communicate the purpose of the website and to make it visually appealing. -->
+      <header class="hero-section py-20 px-4 text-center">
+        <p class="text-mist font-body text-sm tracking-widest uppercase mb-3 ">Good books don't find you. You find them.</p>
+        <h1 class="font-display text-5xl md:text-7xl text-charcoal leading-tight mb-6">
+            Discover Your <br/>
+            <span class="text-slate italic" > Next Reading Adventure</span>
+        </h1>
+        <p class="text-slate text-lg max-w-xl mb-10 leading-relaxed">
+            Search millions of books, save your favourites, and never lose track of what to read next.
+        </p>
+
+        <!-- I created serach bar inside the hero section so that the user can start the searching right away -->
+         <div>
+            <input id="search-input" type="text" placeholder="Search by title or author" class="flex-1 px-5 rounded-lg border-2 border-mist bg-white text-charcoal placeholder-slate focus:outline-none focus:border-slate transition-colors font-body" />
+            <button id="search-btn" class="px-7 py-3 bg-charcoal text-snow rounded-lg font-body font-medium hover:bg-slate transition-colors active:scale-95" >
+                Search
+            </button>
+         </div>
+
+
+        </header>
+
 </body>
 </html>
