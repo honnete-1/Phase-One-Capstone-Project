@@ -166,3 +166,72 @@ So that they won't be blank */
 }
 /* I used animation-delay which staggers each card so they cascade in one by one, */
   /* rather than all appearing at the exact same moment. */
+
+
+  /* Pagination */
+
+  /* I added pagination bar that sits below the book grid */
+
+  .pagination-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  padding: 0 1rem;
+}
+
+/* Base style for every page number button */
+.pagination-btn {
+  min-width: 2.4rem;
+  height: 2.4rem;
+  padding: 0 0.6rem;
+  border-radius: 0.5rem;
+  border: 1.5px solid #C9D6DF;    /* mist */
+  background: white;
+  color: #52616B;                  /* slate */
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.pagination-btn:hover:not(:disabled) {
+  background: #1E2022;             /* charcoal */
+  color: #F0F5F9;                  /* snow */
+  border-color: #1E2022;
+}
+
+/* Disabled state (Prev on page 1, Next on last page) */
+.pagination-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+/* The currently active page — filled dark */
+.pagination-btn.pagination-active {
+  background: #1E2022;             /* charcoal */
+  color: #F0F5F9;                  /* snow */
+  border-color: #1E2022;
+  cursor: default;
+  font-weight: 600;
+}
+
+/* Prev / Next buttons get a bit more horizontal padding */
+.pagination-btn.pagination-prev-next {
+  padding: 0 1rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.02em;
+}
+
+/* The "…" gap between page numbers */
+.pagination-gap {
+  color: #52616B;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  padding: 0 0.2rem;
+  user-select: none;              
+}
