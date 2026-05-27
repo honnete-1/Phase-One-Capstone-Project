@@ -35,17 +35,10 @@ No account. No emails. Just you and your next great read.
 
 ## The Story Behind It
 
-I didn't want to build just another todo app or a weather widget to tick a box.
-I wanted to build something a real person would actually open on a Tuesday evening
-and find useful. Books felt like the right answer — because almost everyone has
-a mental list of books they mean to read, and almost everyone loses that list.
+As a bookworm, building this felt personal. I used to discover books I loved and then lose them, with no way to tag them, save them, or come back to them later. That frustration is exactly what Book Explorer was built to solve.
+Almost everyone has a mental list of books they mean to read, and in most cases that list is lost. Book Explorer is my attempt to fix that, a platform where any book lover can search, save, and actually return to the books that matter to them.
 
-Book Explorer is my attempt to fix that, built from scratch as my Frontend Phase 1
-Capstone at **IGIRE Rwanda Organisation / She Can Code**. Every line of HTML,
-every CSS rule, every JavaScript function — I wrote it, broke it, debugged it,
-and learned why it works.
-
-This README is both documentation and a reflection of that process.
+Built from scratch as my Frontend Phase 1 Capstone at IGIRE Rwanda Organisation / She Can Code. Every line of HTML, every CSS rule, every JavaScript function: I wrote it, broke it, debugged it, and learned why it works.
 
 ---
 
