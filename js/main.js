@@ -29,7 +29,7 @@ if (menuBtn && mobileMenu) {
 
 // UI Helper
 
-unction showLoading() {
+function showLoading() {
   loading.classList.remove('hidden');
   booksGrid.innerHTML = '';
   noResults.classList.add('hidden');
@@ -171,7 +171,7 @@ const prevBtn = makePageBtn('← Prev', page === 1, () => {
   container.appendChild(nextBtn);
 }
 
-unction buildPageWindow(current, total) {
+function buildPageWindow(current, total) {
   const pageSet = new Set();
 
   // Always include first and last page

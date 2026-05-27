@@ -1,10 +1,12 @@
-onst BASE_URL   = 'https://openlibrary.org/search.json';
+
+
+const BASE_URL   = 'https://openlibrary.org/search.json';
 const PAGE_SIZE  = 12;   // books per page — change this one number to adjust everywhere
 
+
 export async function fetchBooks(query, page = 1) {
-
-
-    const offset = (page - 1) * PAGE_SIZE;
+  
+  const offset = (page - 1) * PAGE_SIZE;
 
   const url = `${BASE_URL}?q=${encodeURIComponent(query)}&limit=${PAGE_SIZE}&offset=${offset}&fields=key,title,author_name,cover_i,first_publish_year`;
 
@@ -17,7 +19,8 @@ export async function fetchBooks(query, page = 1) {
 
     const data = await response.json();
 
-const totalFound = data.numFound || 0;
+    
+    const totalFound = data.numFound || 0;
     const totalPages = Math.min(Math.ceil(totalFound / PAGE_SIZE), 100);
 
     const books = data.docs.map(book => ({
@@ -30,13 +33,18 @@ const totalFound = data.numFound || 0;
                   : null,
     }));
 
-  return { books, totalPages, totalFound };
+    // Return all three pieces of data together
+    return { books, totalPages, totalFound };
 
   } catch (error) {
     throw error;
   }
 }
 
+/**
+ * fetchTrendingBooks()
+ * Default books shown on first page load (page 1).
+ */
 export async function fetchTrendingBooks() {
   return fetchBooks('award winning fiction', 1);
 }

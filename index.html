@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Book Explorer</title>
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- I configured Tailwind CSS's theme so that
@@ -43,7 +43,7 @@
     I also added a hover effect to make them more interactive.
      -->
     <nav class="sticky top-0 z-50 bg-charcoal shadow-lg">
-        <div class="max-w-6xl mx-auto px-4 py-4 items-center justify-between">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
             <!-- Brand/Logo -->
             <a href="index.html" class="font-display text-2xl text-snow tracking-wide hover:text-mist transition-colors">
                 📖 Book Explorer
@@ -51,22 +51,40 @@
 
             <!-- I added hamburger icon that is hidden on the desktop and shown on mobile
             and I used aria-label that makes it accessible to screenreaders which will say "open menu" -->
-            <button id="menu-btn" class="md:hodden text-snow text-2xl focus:outline-none" aria-label="Open menu">☰</button>
-        </div>
+            <button id="menu-btn" class="md:hidden text-snow text-2xl focus:outline-none" aria-label="Open menu">☰</button>
         <!-- the mobile dropdown menu will be hidden by default then JS will toggle its visibility when the hamburger icon is clicked -->
-        <div id="mobile-menu" class="hidden md:hidden bg-charcoal border-t border-slate px-4 pb-4">
-            <ul class="flex flex-col gap-3 pt-3 text-mist font-medium text-sm uppercase tracking-widest">
-                <li><a href="index.html" class="nav-link block py-1">Home</a></li>
-                <li><a href="favorites.html" class="nav-link block py-1">Favorites</a></li>
-                <li><a href="about.html" class="nav-link block py-1">About</a></li>
-            </ul>
-        </div> 
+        <ul id="nav-links" class="hidden md:flex gap-8 text-mist font-body font-medium text-sm tracking-widest uppercase">
+        <li><a href="index.html"     class="nav-link active-link">Home</a></li>
+        <li><a href="favorites.html" class="nav-link">Favourites</a></li>
+        <li><a href="about.html"     class="nav-link">About</a></li>
+      </ul>
+    </div>
+
+    <!--
+      Mobile dropdown menu — hidden by default, JS toggles the 'hidden' class.
+      WHY: We separate it from the desktop links so we can style it differently
+      (full-width block vs inline flex).
+    -->
+    <div id="mobile-menu" class="hidden md:hidden bg-charcoal border-t border-slate px-4 pb-4">
+      <ul class="flex flex-col gap-3 pt-3 text-mist font-medium text-sm uppercase tracking-widest">
+        <li><a href="index.html"     class="nav-link block py-1">Home</a></li>
+        <li><a href="favorites.html" class="nav-link block py-1">Favourites</a></li>
+        <li><a href="about.html"     class="nav-link block py-1">About</a></li>
+      </ul>
+    </div>
     </nav>
 
 
     <!-- HERO SECTION -->
      <!-- I added hero section to communicate the purpose of the website and to make it visually appealing. -->
       <header class="hero-section py-20 px-4 text-center">
+        <div class="absolute top-20 left-6">
+        <img
+            src="images/iro-logo.png"
+            alt="Igihe Rwanda Organization logo"
+            class="h-16 w-16 object-contain opacity-90"
+        />
+        </div>
         <p class="text-mist font-body text-sm tracking-widest uppercase mb-3 ">Good books don't find you. You find them.</p>
         <h1 class="font-display text-5xl md:text-7xl text-charcoal leading-tight mb-6">
             Discover Your <br/>
@@ -77,8 +95,8 @@
         </p>
 
         <!-- I created serach bar inside the hero section so that the user can start the searching right away -->
-         <div>
-            <input id="search-input" type="text" placeholder="Search by title or author" class="flex-1 px-5 rounded-lg border-2 border-mist bg-white text-charcoal placeholder-slate focus:outline-none focus:border-slate transition-colors font-body" />
+         <div class="flex flex-col sm:flex-row gap-3 max-w-xl mx-auto">
+            <input id="search-input" type="text" placeholder="Search by title or author" class="flex-1 px-5 py-3 rounded-lg border-2 border-mist bg-white text-charcoal placeholder-slate focus:outline-none focus:border-slate transition-colors font-body" />
             <button id="search-btn" class="px-7 py-3 bg-charcoal text-snow rounded-lg font-body font-medium hover:bg-slate transition-colors active:scale-95" >
                 Search
             </button>
@@ -91,7 +109,7 @@
         <!-- section heading -->
 
             <div class="flex items-center justify-between mb-8">
-                <h2  id=" section-title" class="font-display text-3xl text-charcoal"></h2>
+                <h2  id="section-title" class="font-display text-3xl text-charcoal"></h2>
                 <p id="result-count" class="text-slate text-sm"></p>
             </div>
             <!-- I added spinner to show the user the background task is running 
@@ -118,12 +136,12 @@
   <footer class="bg-charcoal text-mist text-center py-6 text-sm font-body mt-auto">
     <div>
       <p>
-        &copy; 2026 created by Honnete
+        &copy; 2026 Honnete
       </p>
       <p>She Can Code Book Explorer Capstone Project</p>
 
     </div>
   </footer>
-
+<script type="module" src="js/main.js"></script>
 </body>
 </html>
