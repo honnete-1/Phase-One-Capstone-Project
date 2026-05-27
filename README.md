@@ -13,7 +13,7 @@ Book Explorer is a responsive, API-powered web application that lets you search 
 save your favourites, and come back to them any time, even after closing your browser.
 No account. No emails. Just you and your next great read.
 
-**Live Demo:** [Coming soon] | **Built by:** [Honnete Nishimwe](https://github.com/honnete-1)
+**Live Demo:** [https://phase-one-capstone-project-ecru.vercel.app/] | **Built by:** [Honnete Nishimwe](https://github.com/honnete-1)
 
 ---
 
