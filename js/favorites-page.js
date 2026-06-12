@@ -19,15 +19,7 @@ if (menuBtn && mobileMenu) {
   });
 }
 
-//  Main render function 
-/*
-  renderFavorites()
-  Reads the current favourites from localStorage and displays them.
 
-  WHY we call this as a function (not just inline code):
-  If we later want to re-render after removing a book,
-  we just call renderFavorites() again.
-*/
 function renderFavorites() {
   const favorites = getFavorites();    // Read from localStorage
 

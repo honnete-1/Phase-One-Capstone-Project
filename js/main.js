@@ -1,6 +1,7 @@
 import { fetchBooks, fetchTrendingBooks } from './fetchBooks.js';
 import { createBookCard }                 from './bookCard.js';
 
+// DOM references
 const searchInput  = document.getElementById('search-input');
 const searchBtn    = document.getElementById('search-btn');
 const booksGrid    = document.getElementById('books-grid');
@@ -85,7 +86,6 @@ async function loadBooks(query, page = 1, isSearch = false) {
     renderPagination(page, totalPages);
 
     /*
-      WHY scroll to top after page change:
       When you navigate to page 2, you're still scrolled down from page 1.
       Scrolling to the top mimics how normal page navigation feels.
       We don't scroll on the very first load (page 1, not a search).
@@ -133,7 +133,7 @@ function renderPagination(page, total) {
 
 const prevBtn = makePageBtn('← Prev', page === 1, () => {
     loadBooks(currentQuery, currentPage - 1, true);
-  });
+  });                                                  
   prevBtn.classList.add('pagination-prev-next');
   container.appendChild(prevBtn);
 
@@ -201,8 +201,6 @@ function buildPageWindow(current, total) {
 /*
   makePageBtn(label, isDisabled, onClick)
   Helper that creates a single pagination <button> element.
-  WHY a helper: we create many buttons with the same structure —
-  DRY principle again.
 */
 function makePageBtn(label, isDisabled, onClick) {
   const btn = document.createElement('button');
